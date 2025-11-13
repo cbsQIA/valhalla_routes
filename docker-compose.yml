@@ -1,0 +1,33 @@
+services:
+
+  valhalla:
+    image: ghcr.io/nilsnolde/docker-valhalla/valhalla:latest
+    container_name: valhalla
+    volumes:
+      - ./valhalla_files:/custom_files
+    environment:
+      - tile_urls=https://download.geofabrik.de/europe/spain/andalucia-latest.osm.pbf
+      - serve_tiles=True
+      - use_tiles_ignore_pbf=False
+      - force_rebuild=False
+      - build_tiles=True              
+      - build_tar=True
+      - server_threads=1
+    restart: unless-stopped
+
+  streamlit:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: streamlit-app
+    depends_on:
+      - valhalla
+    environment:
+      - VALHALLA_URL=http://valhalla:8002
+    ports:
+      - "8501:8501"
+    restart: unless-stopped
+
+volumes:
+
+  valhalla_files:
