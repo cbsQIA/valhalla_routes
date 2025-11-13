@@ -5,7 +5,7 @@
 Usa la api de `valhalla` en local y llama:
 - [/isochrone](https://valhalla.github.io/valhalla/api/isochrone/api-reference/):  Comprueba que los puntos son alcanzables a cierta distancia
 
- - [/optimized_routes](https://valhalla.github.io/valhalla/api/optimized/api-reference/):  Optimiza la ruta entre puntos, en caso de fallar (por distancia) usa /routes`
+ - [/optimized_routes](https://valhalla.github.io/valhalla/api/optimized/api-reference/):  Optimiza la ruta entre puntos, en caso de fallar (por distancia) usa `/routes`
     
 
 Se debe descargar el [tile](https://valhalla.github.io/valhalla/mjolnir/why_tiles/) necesario para las busquedas. Se parte el mapa del mundo en una cuadricula, cada cuadrado es un `tile`. De esta forma no tienes que tener todos los `tiles` del planeta, solo los que te interesa.
