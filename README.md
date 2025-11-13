@@ -1,5 +1,6 @@
-# Ejemplo sencillo de optimización de rutas
+# Ejemplo sencillo de optimización de rutas usando Valhalla
 
+![alt text](resources/thumbnail.png)
 
 Usa la api de `valhalla` en local y llama:
 - [/isochrone](https://valhalla.github.io/valhalla/api/isochrone/api-reference/):  Comprueba que los puntos son alcanzables a cierta distancia
